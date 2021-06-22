@@ -19,15 +19,20 @@
 // taskTitle.innerText = 'My Tasks';
 // taskTitle.innerHTML = '<span style="color:red">Task List</span>';
 
+// QUERY SELECTOR - A MORE VERSATILE AND POWERFUL LOOKUP TOOL
+// NOTE - IT ALWAYS PULLS THE 1ST ITEM IF THERE ARE MULTIPLE
+// USE # FOR ID AND . FOR CLASSES
+
 // document.querySelector()
 
 console.log(document.querySelector('#task-title'));
 console.log(document.querySelector('.card-title'));
 console.log(document.querySelector('h5'));
 
-document.querySelector('li').style.color = 'red';
-document.querySelector('ul li').style.color = 'blue';
+document.querySelector('li').style.color = 'red'; // will only get the 1st list item
+document.querySelector('ul li').style.color = 'blue'; // allows sub-selection
 
+// CAN USE CSS PSEUDO-CLASSES TO SELECT SPECIFIC ITEMS WHEN THERE ARE MULTIPLE (CSS 3)
 document.querySelector('li:last-child').style.color = 'red';
 document.querySelector('li:nth-child(3)').style.color = 'yellow';
 document.querySelector('li:nth-child(4)').textContent = 'Hello World';
