@@ -1,29 +1,29 @@
-// Create element
+// CREATE ELEMENT
 const li  = document.createElement('li');
 
-// Add class
+// ADD CLASS
 li.className = 'collection-item';
 
-// Add id
+// ADD ID
 li.id = 'new-item';
 
-// Add attribute
+// ADD ATTRIBUTE
 li.setAttribute('title', 'New Item');
 
-// Create text node and append
+// CREATE TEXT NODE AND APPEND
 li.appendChild(document.createTextNode('Hello World'));
 
-// Create new link element
+// CREATE NEW LINK ELEMENT
 const link = document.createElement('a');
-// Add classes
+// ADD CLASSES
 link.className = 'delete-item secondary-content';
-// Add icon html
+// ADD ICON HTML
 link.innerHTML = '<i class="fa fa-remove"></i>';
 
-// Append link into li
+// APPEND LINK INTO LI
 li.appendChild(link);
 
-// Append li as child to ul
+// APPEND LI AS CHILD TO UL
 document.querySelector('ul.collection').appendChild(li);
 
 console.log(li);
