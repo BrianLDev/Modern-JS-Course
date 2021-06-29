@@ -4,12 +4,13 @@
 const newHeading = document.createElement('h2');
 // ADD ID
 newHeading.id = 'task-title';
-// NEW TEXT NODE
-newHeading.appendChild(document.createTextNode('Task List'));
+
+// NEW TEXT NODE - CHILD OF NEW ELEMENT
+newHeading.appendChild(document.createTextNode('New Task List'));
 
 // GET THE OLD HEADING
-const oldHeading = document.getElementById('task-title');
-// PARENT
+const oldHeading = document.getElementById('task-title'); // since it goes in order, this will be the 1st one
+// GET THE PARENT OF OLD HEADING
 const cardAction = document.querySelector('.card-action');
 
 // REPLACE
