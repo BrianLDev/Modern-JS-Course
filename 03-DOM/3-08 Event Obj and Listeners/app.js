@@ -1,35 +1,39 @@
-// document.querySelector('.clear-tasks').addEventListener('click', function(e){
+// ADD AN EVENT LISTENER WITH INLINE FUNCTION
+// document.querySelector('.clear-tasks').addEventListener('click', function(e){ // e is the event object passed back
 //   console.log('Hello World');
 
-//   //e.preventDefault();
+//   e.preventDefault();
+//   alert("cleared!");
 // });
 
-document.querySelector('.clear-tasks').addEventListener('click', onClick);
+// ADD EVENT LISTENER WITH CALL TO A SEPARATE FUNCTION
+document.querySelector('.clear-tasks').addEventListener('click', onClick);  // will run the function onClick when event happens
 
-function onClick(e){
-  //console.log('Clicked');
+// FUNCTION THAT IS CALLED WHEN .CLEAR-TASKS BUTTON IS CLICKED
+function onClick(e){  // e is the event object passed back
+  //alert("cleared!");
 
   let val;
+  val = e;  
 
-  val = e;
+  // EVENT TARGET ELEMENT
+  // e (the event object) stores a lot of variables and parameters within it
+  val = e.target; // target represents the element where the action happens, in this case: `a.clear-tasks.btn.black`
+  val = e.target.id;  // doesn't have an id so this'll return blank
+  val = e.target.className; // `clear-tasks btn black`
+  val = e.target.classList; // returns the above 3 classes in list format
 
-  // Event target element
-  val = e.target;
-  val = e.target.id;
-  val = e.target.className;
-  val = e.target.classList;
+  // // EVENT TYPE
+  val = e.type; // type = click
 
-  // Event type
-  val = e.type;
+  // // TIMESTAMP
+  val = e.timeStamp;  // appears to be in milliseconds
 
-  // Timestamp
-  val = e.timeStamp;
+  // // COORDS EVENT RELATIVE TO THE WINDOW
+  val = e.clientY;  // y position where the event happened relative to the window
+  val = e.clientX;  // x pos
 
-  // Coords event relative to the window
-  val = e.clientY;
-  val = e.clientX;
-
-  // Coords event relative to the element
+  // // COORDS EVENT RELATIVE TO THE ELEMENT (WHERE DID THEY CLICK ON THE BUTTON ITSELF)
   val = e.offsetY;
   val = e.offsetX;
 

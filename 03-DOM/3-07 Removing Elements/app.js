@@ -44,7 +44,7 @@ val = link;
 val = link.getAttribute('href');
 val = link.setAttribute('href', 'http://google.com');
 link.setAttribute('title', 'Google');
-val = link.hasAttribute('title');
+val = link.hasAttribute('title'); // .hasAttribute checks to see if attribute has been set
 link.removeAttribute('title');
 val = link;
 
