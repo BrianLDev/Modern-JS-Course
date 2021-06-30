@@ -1,27 +1,21 @@
+// ASSIGN BUTTONS TO VARIABLES
 const clearBtn = document.querySelector('.clear-tasks');
 const card = document.querySelector('.card');
 const heading = document.querySelector('h5');
 
-// Click
-// clearBtn.addEventListener('click', runEvent);
-// Doubleclick
-// clearBtn.addEventListener('dblclick', runEvent);
-// Mousedown
-// clearBtn.addEventListener('mousedown', runEvent);
-// Mouseup
-// clearBtn.addEventListener('mouseup', runEvent);
-// Mouseenter
-// card.addEventListener('mouseenter', runEvent);
-// Mouseleave
-// card.addEventListener('mouseleave', runEvent);
-// Mouseover
-// card.addEventListener('mouseover', runEvent);
-// Mouseout
-// card.addEventListener('mouseout', runEvent);
-// Mousemove
-card.addEventListener('mousemove', runEvent);
+// TESTING MOUSE EVENTS ON THE BUTTON
+// clearBtn.addEventListener('click', runEvent);  // CLICK
+// clearBtn.addEventListener('dblclick', runEvent); // DOUBLECLICK
+// clearBtn.addEventListener('mousedown', runEvent);  // MOUSEDOWN
+// clearBtn.addEventListener('mouseup', runEvent);  // MOUSEUP
+// TESTING MOUSE EVENTS ON THE CARD
+// card.addEventListener('mouseenter', runEvent); // MOUSEENTER - ONLY ON MAIN OBJECT AND IGNORES CHILD OBJECTS
+// card.addEventListener('mouseleave', runEvent); // MOUSELEAVE - ONLY ON MAIN OBJECT AND IGNORES CHILD OBJECTS
+// card.addEventListener('mouseover', runEvent);  // MOUSEOVER - TAKES INTO ACCOUNT CHILD OBJECTS AS WELL
+// card.addEventListener('mouseout', runEvent); // MOUSEOUT - TAKES INTO ACCOUNT CHILD OBJECTS AS WELL
+card.addEventListener('mousemove', runEvent); // MOUSEMOVE
 
-// Event Handler
+// EVENT HANDLER
 function runEvent(e) {
   console.log(`EVENT TYPE: ${e.type}`);
 
