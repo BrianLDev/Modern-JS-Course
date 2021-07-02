@@ -1,18 +1,22 @@
-// set local storage item
+// STORAGE: LOCAL VS SESSION
+// LOCAL = LONG TERM STORAGE SAVED WITH BROWSER DATA
+// SESSION = SHORT TERM WHILE BROWSER HAS NOT BEEN REFRESHED OR NAVIGATED TO A NEW PAGE
+
+// SET LOCAL STORAGE ITEM
 // localStorage.setItem('name', 'John');
 // localStorage.setItem('age', '30');
 
-// set session storage item
+// SET SESSION STORAGE ITEM
 // sessionStorage.setItem('name', 'Beth');
 
-// remove from storage
+// REMOVE FROM STORAGE
 // localStorage.removeItem('name');
 
-// get from storage
+// GET FROM STORAGE
 // const name = localStorage.getItem('name');
 // const age = localStorage.getItem('age');
 
-// // clear local storage
+// // CLEAR LOCAL STORAGE
 // localStorage.clear();
 
 // console.log(name, age);
@@ -37,7 +41,7 @@ document.querySelector('form').addEventListener('submit', function(e){
   e.preventDefault();
 });
 
-const tasks = JSON.parse(localStorage.getItem('tasks'));
+const tasks = JSON.parse(localStorage.getItem('tasks'));  // need to use JSON.parse to convert string into array
 
 tasks.forEach(function(task){
   console.log(task);
