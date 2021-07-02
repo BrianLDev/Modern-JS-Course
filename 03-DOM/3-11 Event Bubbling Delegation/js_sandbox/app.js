@@ -1,9 +1,10 @@
-// EVENT BUBBLING
+// EVENT BUBBLING - IF AN EFFENT IS TRIGGERED, IT "BUBBLES UP" TO THE PARENT OF THE ELEMENT
 
 // document.querySelector('.card-title').addEventListener('click', function(){
 //   console.log('card title');
 // });
 
+// THE 3 EVENTS BELOW ARE ON THE PARENT OBJECT AND THEY WILL AUTOMATICALLY TRIGGER WHEN THE ABOVE EVENT FIRES
 // document.querySelector('.card-content').addEventListener('click', function(){
 //   console.log('card content');
 // });
@@ -16,8 +17,8 @@
 //   console.log('col');
 // });
 
-// EVENT DELGATION
 
+// EVENT DELGATION - OPPOSITE OF BUBBLING: PARENT OBJECT DELEGATES EVENT DOWN TO A CHILD ELEMENT
 // const delItem = document.querySelector('.delete-item');
 
 // delItem.addEventListener('click', deleteItem);
