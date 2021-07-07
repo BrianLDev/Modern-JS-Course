@@ -8,13 +8,15 @@ const taskInput = document.querySelector('#task');
 // Load all event listeners
 loadEventListeners();
 
-// Load all event listeners
+// Functino to load all event listeners
 function loadEventListeners() {
   // Add task event
   form.addEventListener('submit', addTask);
+  // Remove task event
+  taskList.addEventListener('click', removeTask);
 }
 
-// Add Task
+// Function to Add Task
 function addTask(e) {
   if(taskInput.value === '') {
     alert("Task input is empty. Type in the task you want to complete.");
@@ -40,7 +42,17 @@ function addTask(e) {
     // Append li to the ul (.collection = taskList)
     taskList.appendChild(li);
 
-
     e.preventDefault(); // stops default web behavior
+  }
+}
+
+// Function to Remove Task
+function removeTask(e) {
+  // make sure the click is on the X
+  if (e.target.parentElement.classList.contains('delete-item')) {
+    if (confirm('Are You Sure?')) {
+      // remove the full li (parent of parent of target)
+      e.target.parentElement.parentElement.remove();
+    }
   }
 }
