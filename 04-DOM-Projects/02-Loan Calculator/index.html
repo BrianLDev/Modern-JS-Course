@@ -17,7 +17,7 @@
               <div class="form-group mb-3">
                 <div class="input-group">
                   <span class="input-group-text">$</span>
-                  <input type="number" class="form-control" id="amount" placeholder="50000">
+                  <input type="number" class="form-control" id="amount" placeholder="Loan Amount">
                 </div>
               </div>
               <div class="form-group mb-3">
@@ -29,11 +29,54 @@
               <div class="form-group mb-3">
                 <input type="number" class="form-control" id="term" placeholder="Term (years)">
               </div>
-              <div class="form-group">
+              <div class="form-group mb-3">
                 <input type="submit" value="Calculate" class="btn btn-dark btn-block">
               </div>
             </form>
             <!-- LOADER GOES HERE -->
+            <!-- RESULTS -->
+            <div id="results-mthly" class="pt-4">
+              <h5>RESULTS: MONTHLY</h5>
+              <div class="form-group mb-3">
+                <div class="input-group">
+                  <span class="input-group-text">Principal $</span>
+                  <input type="number" class="form-control" id="mthly-principal" disabled>
+                </div>
+              </div>
+              <div class="form-group mb-3">
+                <div class="input-group">
+                  <span class="input-group-text">Interest $</span>
+                  <input type="number" class="form-control" id="mthly-interest" disabled>
+                </div>
+              </div>
+              <div class="form-group mb-3">
+                <div class="input-group">
+                  <span class="input-group-text">Payment $</span>
+                  <input type="number" class="form-control" id="mthly-pmt" disabled>
+                </div>
+              </div>
+            </div>
+            <div id="results-total" class="pt-4">
+              <h5>RESULTS: TOTAL</h5>
+              <div class="form-group mb-3">
+                <div class="input-group">
+                  <span class="input-group-text">Principal $</span>
+                  <input type="number" class="form-control" id="total-principal" disabled>
+                </div>
+              </div>
+              <div class="form-group mb-3">
+                <div class="input-group">
+                  <span class="input-group-text">Interest $</span>
+                  <input type="number" class="form-control" id="total-interest" disabled>
+                </div>
+              </div>
+              <div class="form-group mb-3">
+                <div class="input-group">
+                  <span class="input-group-text">Payment $</span>
+                  <input type="number" class="form-control" id="total-pmt" disabled>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </div>
