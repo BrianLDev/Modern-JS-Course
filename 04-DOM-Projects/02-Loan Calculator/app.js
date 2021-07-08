@@ -30,11 +30,11 @@ function calculateResults(e) {
     const totalPmts = (monthlyPmt * compoundingTerm).toFixed(2);
     const totalInterest = (totalPmts - principal).toFixed(2);
 
-    UImonthlyPmt.value = monthlyPmt.toFixed(2);
-    UInumPmts.value = compoundingTerm.toFixed(2);
-    UItotalPmts.value = totalPmts.toFixed(2);
+    UImonthlyPmt.value = monthlyPmt;
+    UInumPmts.value = compoundingTerm;
+    UItotalPmts.value = totalPmts;
     UItotalPrincipal.value = principal.toFixed(2);
-    UItotalInterest.value = totalInterest.toFixed(2);
+    UItotalInterest.value = totalInterest;
   } else {
     showError('Error: Please double check values');
   }
