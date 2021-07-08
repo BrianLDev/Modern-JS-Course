@@ -24,14 +24,40 @@ function calculateResults(e) {
   const numerator = compoundingRate * principal * Math.pow(1+compoundingRate, compoundingTerm);
   const denominator = Math.pow(1+compoundingRate, compoundingTerm)-1;
   const monthlyPmt = (numerator / denominator).toFixed(2);
-  const totalPmts = (monthlyPmt * compoundingTerm).toFixed(2);
-  const totalInterest = (totalPmts - principal).toFixed(2);
 
-  UImonthlyPmt.value = monthlyPmt;
-  UInumPmts.value = compoundingTerm;
-  UItotalPmts.value = totalPmts;
-  UItotalPrincipal.value = principal;
-  UItotalInterest.value = totalInterest;
+  // validate monthly Pmt is valid (finite) then populate the UI
+  if (isFinite(monthlyPmt)) {
+    const totalPmts = (monthlyPmt * compoundingTerm).toFixed(2);
+    const totalInterest = (totalPmts - principal).toFixed(2);
+
+    UImonthlyPmt.value = monthlyPmt.toFixed(2);
+    UInumPmts.value = compoundingTerm.toFixed(2);
+    UItotalPmts.value = totalPmts.toFixed(2);
+    UItotalPrincipal.value = principal.toFixed(2);
+    UItotalInterest.value = totalInterest.toFixed(2);
+  } else {
+    alert('error');
+    showError('Error: Please double check values');
+  }
   
   e.preventDefault();
+}
+
+// Show Error
+function showError(error) {
+  // Get elements from UI
+  const card = document.querySelector('.card');
+  const heading = document.querySelector('.heading');
+
+  // Create a div
+  const errorDiv = document.createElement('div');
+
+  // Add class
+  errorDiv.className = 'alert alert-danger';  // bootstrap classes for alert
+
+  // Create text node and append to div
+  errorDiv.appendChild(document.createTextNode(error));
+
+  // Insert error above heading
+  card.insertBefore(errorDiv, heading);
 }
