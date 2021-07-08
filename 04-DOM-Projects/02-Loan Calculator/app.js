@@ -36,7 +36,6 @@ function calculateResults(e) {
     UItotalPrincipal.value = principal.toFixed(2);
     UItotalInterest.value = totalInterest.toFixed(2);
   } else {
-    alert('error');
     showError('Error: Please double check values');
   }
   
@@ -60,4 +59,11 @@ function showError(error) {
 
   // Insert error above heading
   card.insertBefore(errorDiv, heading);
+
+  // Clear error after 3 seconds
+  setTimeout(clearError, 3000); // 3000ms = 3s
+}
+
+function clearError() {
+  document.querySelector('.alert').remove();
 }
