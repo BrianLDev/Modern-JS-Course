@@ -1,3 +1,6 @@
+// PROTOTYPE INHERITANCE
+// https://javascript.info/prototype-inheritance
+
 // Person constructor
 function Person(firstName, lastName) {
   this.firstName = firstName;
