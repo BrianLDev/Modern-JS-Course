@@ -1,4 +1,4 @@
-// Game values
+// Game variables
 let min = 1,
     max = 10,
     winningNum = 2,
