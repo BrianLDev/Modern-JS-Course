@@ -1,3 +1,7 @@
+// JAVASCRIPT PROTOTYPES
+// https://www.w3schools.com/js/js_object_prototypes.asp
+// The JavaScript prototype property also allows you to add new methods to objects constructors:
+
 //Object.prototype
 //Person.prototype
 
@@ -43,5 +47,5 @@ mary.getsMaried('Smith');
 
 console.log(mary.getFullName());
 
-console.log(mary.hasOwnProperty('firstName'));
-console.log(mary.hasOwnProperty('getFullName'));
+console.log(mary.hasOwnProperty('firstName'));  // check if this property is part of class = True
+console.log(mary.hasOwnProperty('getFullName'));  // check if this property is part of class = False
