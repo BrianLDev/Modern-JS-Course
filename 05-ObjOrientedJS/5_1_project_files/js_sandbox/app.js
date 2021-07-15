@@ -1,12 +1,15 @@
 // Person constructor
-function Person(name, dob) {
+// NOTE - IN JS, CLASSES ARE JUST SPECIAL TYPES OF FUNCTIONS. CAN USE EITHER 'function' OR SPECIAL TERM 'class'
+
+// class Person(name, dob) {  // either of these will work
+function Person(name, dob) {  // either of these will work
   this.name = name;
   // this.age = age;
   this.birthday = new Date(dob);
   this.calculateAge = function(){
     const diff =  Date.now() - this.birthday.getTime();
     const ageDate = new Date(diff);
-    return Math.abs(ageDate.getUTCFullYear() - 1970);
+    return Math.abs(ageDate.getUTCFullYear() - 1970); // calculate age
   }
 }
 
