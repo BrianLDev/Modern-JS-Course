@@ -1,6 +1,8 @@
 // PROTOTYPE INHERITANCE
 // https://javascript.info/prototype-inheritance
 
+// NOTE - SECTIONS 5.1 THRU 5.5 COVER THE OLD ES5 CLASS SYNTAX.  SECTION 5.6 THRU 5.7 COVERS THE NEW ES6 CLASS SYNTAX.
+
 // Person constructor
 function Person(firstName, lastName) {
   this.firstName = firstName;

@@ -2,6 +2,8 @@
 // https://www.w3schools.com/js/js_object_prototypes.asp
 // The JavaScript prototype property also allows you to add new methods to objects constructors:
 
+// NOTE 1 - SECTIONS 5.1 THRU 5.5 COVER THE OLD ES5 CLASS SYNTAX.  SECTION 5.6 THRU 5.7 COVERS THE NEW ES6 CLASS SYNTAX.
+
 //Object.prototype
 //Person.prototype
 

@@ -1,6 +1,9 @@
-// Person constructor
-// NOTE - IN JS, CLASSES ARE JUST SPECIAL TYPES OF FUNCTIONS. CAN USE EITHER 'function' OR SPECIAL TERM 'class'
+// CONSTRUCTORS AND THE 'THIS' KEYWORD
 
+// NOTE 1 - SECTIONS 5.1 THRU 5.5 COVER THE OLD ES5 CLASS SYNTAX.  SECTION 5.6 THRU 5.7 COVERS THE NEW ES6 CLASS SYNTAX.
+// NOTE 2 - IN JS, CLASSES ARE JUST SPECIAL TYPES OF FUNCTIONS. CAN USE EITHER 'function' OR SPECIAL TERM 'class'
+
+// PERSON CONSTRUCTOR
 // class Person(name, dob) {  // either of these will work
 function Person(name, dob) {  // either of these will work
   this.name = name;

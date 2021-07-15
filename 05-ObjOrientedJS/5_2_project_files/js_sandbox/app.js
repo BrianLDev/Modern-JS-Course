@@ -1,5 +1,7 @@
-// String
+// BUILT-IN CONSTRUCTORS
+// NOTE - SECTIONS 5.1 THRU 5.5 COVER THE OLD ES5 CLASS SYNTAX.  SECTION 5.6 THRU 5.7 COVERS THE NEW ES6 CLASS SYNTAX.
 
+// String
 const name1 = 'Jeff';
 const name2 = new String('Jeff');
 
