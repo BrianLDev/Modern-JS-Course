@@ -1,3 +1,5 @@
+// ES6 SUBCLASSES / INHERITANCE
+
 class Person {
   constructor(firstName, lastName) {
     this.firstName = firstName;
@@ -9,6 +11,7 @@ class Person {
   }
 }
 
+// CREATE A SUBCLASS USING extends
 class Customer extends Person {
   constructor(firstName, lastName, phone, membership) {
     super(firstName, lastName);
