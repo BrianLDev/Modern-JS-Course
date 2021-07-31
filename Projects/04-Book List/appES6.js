@@ -50,7 +50,48 @@ class UI {
   }
 }
 
+// LOCAL STORAGE CLASS
+class Storage {
+  static getBooks() {
+    let books;
+    if(localStorage.getItem('books') === null) {
+      books = [];
+    } else {
+      books = JSON.parse(localStorage.getItem('books'));  // need to JSON.parse to convert to javascript object
+    }
+    return books;
+  }
+
+  static displayBooks() {
+    const books = Storage.getBooks();
+    books.forEach(function(book) {
+      const ui = new UI;
+      ui.addBookToList(book);
+    });
+  }
+
+  static addBook(book) {
+    const books = Storage.getBooks();
+    books.push(book);
+    localStorage.setItem('books', JSON.stringify(books));
+  }
+
+  static deleteBook(isbn) {
+    const books = Storage.getBooks();
+    books.forEach(function(book, index) {
+      if (book.isbn === isbn) {
+        books.splice(index, 1);
+      }
+    });
+    localStorage.setItem('books', JSON.stringify(books));
+  }
+
+}
+
 // EVENT LISTENERS
+// EVENT LISTENER WHEN DOM LOADED (SCREEN REFRESH)
+document.addEventListener('DOMContentLoaded', Storage.displayBooks());
+
 // EVENT LISTENER FOR ADD BOOK
 document.getElementById('book-form').addEventListener('submit', 
   function(e) {
@@ -66,7 +107,8 @@ document.getElementById('book-form').addEventListener('submit',
       ui.showAlert('Please fill in all fields', 'error');
     } else {
       const book = new Book(title, author, isbn); // instantiate a new book
-      ui.addBookToList(book); // Add book to list
+      ui.addBookToList(book); // Add book to table in UI
+      Storage.addBook(book);  // Add book to local storage
       ui.clearFields(); // clear form fields
       ui.showAlert('Book added!', 'success');
     }
@@ -77,7 +119,8 @@ document.getElementById('book-form').addEventListener('submit',
 // EVENT LISTENER FOR DELETE
 document.getElementById('book-list').addEventListener('click', function(e) {
   const ui = new UI();  // instantiate UI for table
-  ui.deleteBook(e.target);  // delete book
+  ui.deleteBook(e.target);      // delete book from UI table
+  Storage.deleteBook(e.target.parentElement.previousElementSibling.textContent); // delete book from local storage via isbn number
   ui.showAlert('Book deleted!', 'success');
 
   e.preventDefault();
