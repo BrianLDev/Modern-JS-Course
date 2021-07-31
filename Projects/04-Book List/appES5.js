@@ -10,6 +10,7 @@ function Book(title, author, isbn) {
 // UI CONSTRUCTOR
 function UI() {}  // nothing passed in, everything will go into the prototype
 // UI FUNCTIONS ADDED VIA PROTOTYPE
+// UI - add book
 UI.prototype.addBookToList = function(book) {
   const list = document.getElementById('book-list');
   // create table row element
@@ -23,6 +24,7 @@ UI.prototype.addBookToList = function(book) {
   `
   list.appendChild(row);
 }
+// UI - show alert
 UI.prototype.showAlert = function(message, className) {
   const div = document.createElement('div');  // create div
   div.className = `alert ${className}`; // add classes
@@ -35,6 +37,13 @@ UI.prototype.showAlert = function(message, className) {
     document.querySelector('.alert').remove();
   }, 2000);
 }
+// UI - delete book
+UI.prototype.deleteBook = function(target) {
+  if(target.className === 'delete') {
+    target.parentElement.parentElement.remove();
+  }
+}
+// UI - clear fields
 UI.prototype.clearFields = function() {
   document.getElementById('title').value = '';
   document.getElementById('author').value = '';
@@ -42,6 +51,7 @@ UI.prototype.clearFields = function() {
 }
 
 // EVENT LISTENERS
+// EVENT LISTENER FOR ADD BOOK
 document.getElementById('book-form').addEventListener('submit', 
   function(e) {
     // get values from form
@@ -62,4 +72,13 @@ document.getElementById('book-form').addEventListener('submit',
     }
 
     e.preventDefault();
+});
+
+// EVENT LISTENER FOR DELETE
+document.getElementById('book-list').addEventListener('click', function(e) {
+  const ui = new UI();  // instantiate UI for table
+  ui.deleteBook(e.target);  // delete book
+  ui.showAlert('Book deleted!', 'success');
+
+  e.preventDefault();
 });
