@@ -41,6 +41,14 @@ UI.prototype.showAlert = function(message, className) {
   }, 3000)
 }
 
+// UI - Delete book
+UI.prototype.deleteBook = function(target) {
+  if (target.className === 'delete') {
+    // item we need to delete is 2 parents above the X that is clicked.
+    target.parentElement.parentElement.remove();
+  }
+}
+
 // UI - Clear Fields
 UI.prototype.clearFields = function() {
   document.getElementById("title").value = "";
@@ -49,6 +57,7 @@ UI.prototype.clearFields = function() {
 }
 
 // EVENT LISTENERS
+// Event Listener for add book
 document.getElementById('book-form').addEventListener('submit', 
   function(event) {
     // get input data from form
@@ -80,3 +89,16 @@ document.getElementById('book-form').addEventListener('submit',
   }
 );
 
+// Event Listener for Delete
+document.getElementById('book-list').addEventListener('click', 
+  function(event) {  // need to get parent (book list)
+    // Instantiate UI
+    ui = new UI();
+
+    ui.deleteBook(event.target);
+
+    ui.showAlert('Book Removed!', 'success');
+
+    event.preventDefault();
+  }
+)
